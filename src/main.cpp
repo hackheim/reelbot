@@ -14,6 +14,10 @@ void setup() {
     pinMode(D8, OUTPUT);
     pinMode(D9, OUTPUT);
     pinMode(D10, OUTPUT);
+    digitalWrite(D7, LOW);
+    digitalWrite(D8, LOW);
+    digitalWrite(D9, LOW);
+    digitalWrite(D10, LOW);
 }
 
 void loop()
