@@ -25,4 +25,5 @@ DIY hacked together FPV remote-controlled car
 - Get the code `git clone git@github.com:hackheim/reelbot.git`
 - Install serial startup script by running `sudo systemctl enable /home/pi/reelbot/reelbot.service`. To start and stop, run `sudo systemctl start|stop reelbot.service`. To connect screen, use `screen -r reelbot`.
 - Connect arduino, enter reelbot folder, and run `platformio run --target upload`. Enter Y if asked about platform install
+- Allow apache to access usb devices `sudo usermod -a -G dialout www-data`
 - Replace weserver config `sudo sh -c 'cat apache.conf > /etc/apache2/sites-available/000-default.conf'`and restart server `sudo service apache2 restart`
