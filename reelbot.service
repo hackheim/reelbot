@@ -1,0 +1,16 @@
+[Unit]
+Description=Reelbot systemd service
+Before=systemd-user-sessions.service
+
+[Service]
+TimeoutStartSec=0
+
+ExecStart=/usr/bin/screen -dmS reelbot bash -c '/usr/bin/picocom -b 9600 -r -l /dev/ttyUSB0 --omap crlf'
+User=root
+RemainAfterExit=yes
+
+ExecStop=/usr/bin/screen -S reelbot -X quit
+User=root
+
+[Install]
+WantedBy=multi-user.target
