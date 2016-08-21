@@ -4,14 +4,17 @@
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
   <title>click demo</title>
+<script type="text/javascript" src="/jquery.min.js"></script>
   <style>
-  body {
+  html, body {
 -webkit-touch-callout: none;
 -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
 -ms-user-select: none;
 user-select: none;
+margin: 0;
+padding: 0;
 }
   .button {
     color: red;
@@ -22,16 +25,25 @@ user-select: none;
     margin-bottom: 10px;
     display: block;
   }
+#buttons {
+ position: relative;
+ z-index: 2;
+}
+#video {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  left: 0;
+}
   </style>
-  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-<div>
-<div style="float:left;width:40%"> 
+<div id="buttons">
+<div style="float:left;width:10%"> 
 <a class="button" id="LF">&uarr;</a><br>
 <a class="button" id="LB">&darr;</a>
 </div>
-<div style="float:right;width:40%">
+<div style="float:right;width:10%">
 <a class="button" id="RF">&uarr;</a><br>
 <a class="button" id="RB">&darr;</a>
 </div>
@@ -53,6 +65,6 @@ $( ".button" ).on('touchend', function(event) {
   });
 });
 </script>
- 
+<img id="video" src="http://<?php echo $_SERVER['SERVER_NAME'] ?>:8080/stream/video.mjpeg" alt="image"> 
 </body>
 </html>
